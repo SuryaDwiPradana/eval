@@ -1,0 +1,6 @@
+{"bph" : [{"nim1":"namabph1","nim2":"nama2bph"}],
+ "koma": [{"nim1":"nama1koma","nim2":"nama2koma"}],
+ "komb": [{"nim1":"nama1komb","nim2":"nama2komb"}],
+ "komc": [{"nim1":"nama1komc","nim2":"nama2komc"}],
+ "komd": [{"nim1":"nama1komd","nim2":"nama2komd"}]
+}
