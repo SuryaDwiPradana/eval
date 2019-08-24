@@ -1,0 +1,4 @@
+resources/output/prepare/*
+resources/output/process/*
+resources/output/report/*
+resources/output/report/*/*
