@@ -37,4 +37,4 @@ venv.bak/
 .vscode/
 test/
 org-eval/resources/input/
-org-eval/resources/output/
+org-eval/resources/output/*/
