@@ -1,4 +1,4 @@
-from common import make_dir
+# from common import make_dir
 
 def fill_identity(wb_res,name,nim,org,position,period):
     wb_res.active["B4"] = f": {name}"
