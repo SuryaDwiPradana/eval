@@ -8,19 +8,10 @@ class Prepare():
 
     @staticmethod
     def importExcel(filename, sheetname):
-        """[summary]
-        
-        Arguments:
-            filename {[str]} -- [Name of file to import in resources]
-            sheetname {[str]} -- [Fill with sheet name or sheet index]
-        
-        Returns:
-            [dataframe] -- [description]
-        """
         import pandas as pd
         return pd.read_excel('resources/{}.xlsx'.format(filename), header = 0, sheet_name = sheetname)
 
-    @staticmethod    
+    @staticmethod
     def filter(data):
         return data.loc[data['Keterangan'] == 'Dievaluasi']
 
@@ -43,7 +34,7 @@ class Prepare():
             data = self.__filter.loc[self.__filter['Jabatan'] == item]
             for i in range(len(data)):
                 workbook.active.protection.sheet = True
-                workbook.active.protection.password = '000'
+                workbook.active.protection.password = 'sweet'
                 for x in range(3,35):
                     workbook.active['G'+str(x)].protection = Protection(locked=False)
                     workbook.active['L'+str(x)].protection = Protection(locked=False)
@@ -57,6 +48,6 @@ class Prepare():
                 workbook.copy_worksheet(workbook.active)
                 workbook.active = len(workbook.sheetnames)-1
         workbook.remove(workbook.active)
-        workbook.security = WorkbookProtection(workbookPassword='000', lockWindows=True, lockStructure=True)
+        workbook.security = WorkbookProtection(workbookPassword='sweet', lockWindows=True, lockStructure=True)
         workbook.save("resources/output/prepare/{}.xlsx".format(args[0]))
         workbook.close()
