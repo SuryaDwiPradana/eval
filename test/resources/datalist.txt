@@ -41,7 +41,11 @@
 		"412015019": [{
 			"nama": "Sonia Falensia Sopacuaperu",
 			"jabatan": "Anggota Komisi Program"
-		}],		
+		}],	
+		"202016056": [{
+			"nama": "Adelia Jenny Hapsari",
+			"jabatan": "Anggota Komisi Program"
+		}],			
 		"802015184": [{
 			"nama": "Nadine Syah Kusuma P",
 			"jabatan": "Sekretaris Komisi Program"
