@@ -9,7 +9,7 @@ class Prepare():
     @staticmethod
     def importExcel(filename, sheetname):
         import pandas as pd
-        return pd.read_excel('resources/{}.xlsx'.format(filename), header = 0, sheet_name = sheetname)
+        return pd.read_excel('resources/{}.xlsx'.format(filename), header=0, sheet_name=sheetname)
 
     @staticmethod
     def filter(data):
@@ -23,7 +23,7 @@ class Prepare():
 
     def generate(self):
         for i in self.__evalDict:
-            self.__generateExcel(i,self.__evalDict[i])
+            self.__generateExcel(i, self.__evalDict[i])
 
     def __generateExcel(self, *args):
         from openpyxl import load_workbook
@@ -35,10 +35,10 @@ class Prepare():
             for i in range(len(data)):
                 workbook.active.protection.sheet = True
                 workbook.active.protection.password = 'sweet'
-                for x in range(3,35):
-                    workbook.active['G'+str(x)].protection = Protection(locked=False)
-                    workbook.active['L'+str(x)].protection = Protection(locked=False)
-                    workbook.active['Q'+str(x)].protection = Protection(locked=False)
+                for x in range(3, 35):
+                    workbook.active['G' + str(x)].protection = Protection(locked=False)
+                    workbook.active['L' + str(x)].protection = Protection(locked=False)
+                    workbook.active['Q' + str(x)].protection = Protection(locked=False)
                 workbook.active['B1'].value = data.Nama.values[i]
                 workbook.active['G1'].value = data.NIM.values[i]
                 workbook.active['J1'].value = data.Jabatan.values[i]
@@ -46,7 +46,7 @@ class Prepare():
                 workbook.active['S1'].value = data.Nama.values[i]
                 workbook.active.title = str(data.NIM.values[i])
                 workbook.copy_worksheet(workbook.active)
-                workbook.active = len(workbook.sheetnames)-1
+                workbook.active = len(workbook.sheetnames) - 1
         workbook.remove(workbook.active)
         workbook.security = WorkbookProtection(workbookPassword='sweet', lockWindows=True, lockStructure=True)
         workbook.save("resources/output/prepare/{}.xlsx".format(args[0]))

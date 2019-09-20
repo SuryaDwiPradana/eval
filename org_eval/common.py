@@ -14,11 +14,11 @@ class Configuration():
 
     def _load_data_new(self):
         import openpyxl
-        file = openpyxl.load_workbook(self.config['resources_path']+"\\"+'data.xlsx')
+        file = openpyxl.load_workbook(self.config['resources_path'] + "\\" + 'data.xlsx')
         data = {}
         file.active = 0
         if file.active.title.lower() == 'data':
-            for _ in range(2, file.active.max_row+1):
+            for _ in range(2, file.active.max_row + 1):
                 name = file.active[f"A{_}"].value
                 nim = file.active[f"B{_}"].value
                 position = file.active[f"C{_}"].value
@@ -42,10 +42,10 @@ class Configuration():
     def _load_data(self, name):
         try:
             import json
-            with open(self.config['resources_path']+"\\"+name) as f:
+            with open(self.config['resources_path'] + "\\" + name) as f:
                 self.data = json.load(f)
         except Exception as e:
-            print(e)   
+            print(e)
 
     def load_sheet(self, xlsx, data=False):
         import openpyxl
@@ -64,7 +64,7 @@ def make_dir(dirname, path):
         import os
         home = os.path.expanduser(path)
 
-        if not os.path.exists(os.path.join(home, TESTDIR)):  
+        if not os.path.exists(os.path.join(home, TESTDIR)):
             os.makedirs(os.path.join(home, TESTDIR))
     except Exception as e:
         print(e)

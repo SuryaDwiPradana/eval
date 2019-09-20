@@ -35,6 +35,7 @@ env.bak/
 venv.bak/
 
 .vscode/
+.idea/
 test/
 org-eval/resources/input/
 org-eval/resources/output/*/
