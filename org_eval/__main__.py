@@ -3,7 +3,7 @@
 # sys.path.append((os.path.join(os.path.dirname(__file__))))
 
 from modules.prepare import Prepare
-# from modules.process import main_process
+from modules.process import Process
 # from modules.report import main_report
 # from common import Configuration
 
