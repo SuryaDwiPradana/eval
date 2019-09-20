@@ -1,5 +1,9 @@
 class Prepare():
     def __init__(self, excel_name='data'):
+        '''
+        :param excel_name:
+        name of excel
+        '''
         self.__all = self.importExcel(excel_name, 0).dropna()
         self.__filter = self.filter(self.__all)
         self.__evaluator = self.importExcel(excel_name, 1).fillna('')
@@ -8,6 +12,13 @@ class Prepare():
 
     @staticmethod
     def importExcel(filename, sheetname):
+        '''
+        :param filename:
+        nama file
+        :param sheetname:
+        nama/index sheet
+        :return:
+        '''
         import pandas as pd
         return pd.read_excel('resources/{}.xlsx'.format(filename), header=0, sheet_name=sheetname)
 
