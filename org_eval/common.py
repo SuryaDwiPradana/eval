@@ -9,7 +9,6 @@ class Configuration():
 
         self.folder['dirname'] = ['prepare', 'process', 'report']
         self.data = {}
-        # self._load_data("datalist.txt")
         self._load_data_new()
 
     def _load_data_new(self):
